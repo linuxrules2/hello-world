@@ -8,7 +8,7 @@ public class HanoiTower {
 	    // write your code here
         HanoiTower inst = new HanoiTower();
 
-        inst.doHanoiTower(25);
+        inst.doHanoiTower(30);
     }
 
     private void printTime (Date date) {
@@ -19,8 +19,8 @@ public class HanoiTower {
 
         if(layer == 1) {
             // one layer
-            //System.out.println("Move one disk from " + from + " to " + to + ".");
-            HanoiDBUpdater.getInstance().addMove(from, to);
+            System.out.println("Move one disk from " + from + " to " + to + ".");
+            //HanoiDBUpdater.getInstance().addMove(from, to);
         }
         else {
             move(from, via, to, layer -1);
@@ -40,8 +40,8 @@ public class HanoiTower {
         printTime(start);
         printTime(end);
 
-        HanoiDBUpdater.getInstance().close();
-       //system.out.println("Total Time: " + (end - start));
+        //HanoiDBUpdater.getInstance().close();
+        System.out.println("Total Time: " + (end.getTime() - start.getTime()));
     }
 
 }
